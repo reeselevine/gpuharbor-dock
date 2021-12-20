@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GPU Harbor</title>
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="cards.css">
+  </head>
+
+  <body>
+
+    <!-- START NAV -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            GPU Harbor
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active">
+              Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- END NAV -->
+
+    <div class="container">
+      <div class="section">
+        <div class="columns">
+          <div class="column has-text-centered">
+            <h1 class="title" style="color: ghostwhite;">Projects</h1>
+            <p style="color: ghostwhite">
+            Welcome to GPU Harbor at UCSC! This website is a collection of research projects on understanding and testing features of GPUs, mostly geared towards compute applications. GPU Harbor is under the umbrella of the <a href="https://lsd.ucsc.edu/">LSD Lab</a> and projects here are primarily supervised by <a href="https://users.soe.ucsc.edu/~tsorensen/">Tyler Sorensen</a>.
+            </p>
+          </div>
+        </div>
+        <div id="app" class="row columns is-multiline">
+          <div v-for="card in cardData" key="card.id" class="column is-4">
+            <div class="card large">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img :src="card.image" alt="Image">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p>
+                      <span class="title is-4">
+                        <a :href=`https://gpuharbor.ucsc.edu/${card.info.path}`> {{card.info.title}} </a> </span> </p>
+                  </div>
+                </div>
+                <div class="content">
+                  {{card.content}}
+                  <div class="background-icon"><span class="icon-twitter"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            <strong>GPU Harbor</strong> at <strong>UC Santa Cruz</strong>.
+            This page's source code uses the <a href="http://opensource.org/licenses/mit-license.php">MIT</a> license. <br>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="cardsData.js"></script>
+
+    <!-- Using Vue to populate cards to reduce redundant code -->
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          cardData: cardsData
+        }
+      })
+
+    </script>
+  </body>
+
+</html>
