@@ -1,7 +1,7 @@
 let cardsData = [
     {
 	id: 1,
-	image: 'https://source.unsplash.com/QPNpXcQfdLA/1280x720',
+	image: 'fish.jpg',
 	info: {
 	    path: 'webgpu-mem-testing',
 	    title: 'WebGPU Memory Model Testing'
@@ -16,6 +16,15 @@ let cardsData = [
 	    title: 'GPU Forward Progress Testing'
 	},
 	content: 'A vizualization of the GPU forward progress tests generated for the OOPSLA 2021 paper: Specifying and Testing GPU Workgroup Progress Models.'
+    },
+    {
+	id: 3,
+	image: 'sailboats.jpg',
+	info: {
+	    path: 'webgpu-race-testing',
+	    title: 'WebGPU Data Race Testing'
+	},
+	content: "This project uses fuzzing to test WebGPU's security properties in the face of data races and other undefined behaviors."
     }
 
 ]
