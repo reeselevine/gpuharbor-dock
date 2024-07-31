@@ -12,7 +12,7 @@ let cardsData = [
 	id: 2,
 	image: 'tidepools.png',
 	info: {
-	    path: 'gpu-forward-progress',
+	    path: 'gpu-forward-progress/testExplorer.html',
 	    title: 'GPU Forward Progress Testing'
 	},
 	content: 'A vizualization of the GPU forward progress tests generated for the OOPSLA 2021 paper: Specifying and Testing GPU Workgroup Progress Models.'
